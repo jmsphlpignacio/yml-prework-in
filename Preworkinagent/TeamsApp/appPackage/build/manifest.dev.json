@@ -1,0 +1,62 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.20/MicrosoftTeams.schema.json",
+    "version": "1.0.0",
+    "manifestVersion": "1.20",
+    "id": "b1ddd426-2835-440d-8a70-e8bbef03e73c",
+    "name": {
+        "short": "preworkinagent-dev",
+        "full": "Preworkinagent"
+    },
+    "developer": {
+        "name": "Microsoft",
+        "mpnId": "",
+        "websiteUrl": "https://microsoft.com",
+        "privacyUrl": "https://privacy.microsoft.com/privacystatement",
+        "termsOfUseUrl": "https://www.microsoft.com/legal/terms-of-use"
+    },
+    "description": {
+        "short": "Sample bot that repeats back what you say",
+        "full": "Sample bot that repeats back what you say"
+    },
+    "icons": {
+        "outline": "outline.png",
+        "color": "color.png"
+    },
+    "accentColor": "#FFFFFF",
+    "staticTabs": [
+        {
+            "entityId": "conversations",
+            "scopes": [
+                "personal"
+            ]
+        },
+        {
+            "entityId": "about",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "bots": [
+        {
+            "botId": "30357b59-ea23-4d18-8b18-f48d37a3bb77",
+            "scopes": [
+                "personal",
+                "team",
+                "groupChat"
+            ],
+            "isNotificationOnly": false,
+            "supportsCalling": false,
+            "supportsVideo": false,
+            "supportsFiles": false
+        }
+    ],
+    "validDomains": [
+        "botd6d758.azurewebsites.net",
+        "*.botframework.com"
+    ],
+    "webApplicationInfo": {
+        "id": "30357b59-ea23-4d18-8b18-f48d37a3bb77",
+        "resource": "api://botid-30357b59-ea23-4d18-8b18-f48d37a3bb77"
+    }
+}

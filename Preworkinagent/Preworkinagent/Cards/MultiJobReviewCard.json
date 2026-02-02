@@ -1,0 +1,267 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "style": "emphasis",
+      "bleed": true,
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\ud83d\udcdd",
+                  "size": "Large"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Multi-Job RFI Review",
+                  "weight": "Bolder",
+                  "size": "Large",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${jobCount} job(s) selected for review",
+                  "spacing": "None",
+                  "isSubtle": true,
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Earliest Due:",
+                  "size": "Small",
+                  "isSubtle": true
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${earliestDueDate}",
+                  "weight": "Bolder",
+                  "color": "${dueDateColor}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "JOBS TO REVIEW",
+          "weight": "Bolder",
+          "size": "Medium"
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "80px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Job ID",
+                  "weight": "Bolder",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Client / Group",
+                  "weight": "Bolder",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "90px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Due Date",
+                  "weight": "Bolder",
+                  "size": "Small",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "$data": "${jobs}",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "80px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${jobId}",
+                  "size": "Small",
+                  "color": "Accent"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${clientName}",
+                  "size": "Small",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${clientGroupName}",
+                  "size": "Small",
+                  "isSubtle": true,
+                  "spacing": "None",
+                  "wrap": true
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "90px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${dueDate}",
+                  "size": "Small",
+                  "horizontalAlignment": "Right",
+                  "color": "${dueDateColor}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Add note to all emails (optional):",
+          "size": "Small",
+          "weight": "Bolder"
+        },
+        {
+          "type": "Input.Text",
+          "id": "partnerNotes",
+          "placeholder": "Enter any notes to include in all RFI emails...",
+          "isMultiline": true,
+          "maxLength": 500
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Select jobs to exclude (optional):",
+          "size": "Small",
+          "weight": "Bolder"
+        },
+        {
+          "type": "Input.ChoiceSet",
+          "id": "excludedJobs",
+          "isMultiSelect": true,
+          "style": "expanded",
+          "choices": "${jobChoices}"
+        }
+      ],
+      "$when": "${jobCount > 1}"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Send RFI to All",
+      "style": "positive",
+      "data": {
+        "action": "send_rfi_multi",
+        "allJobIds": "${allJobIds}",
+        "jobCount": "${jobCount}"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Review One by One",
+      "data": {
+        "action": "review_individual_multi",
+        "allJobIds": "${allJobIds}",
+        "jobCount": "${jobCount}"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Cancel",
+      "style": "destructive",
+      "data": {
+        "action": "cancel_multi_review"
+      }
+    }
+  ]
+}

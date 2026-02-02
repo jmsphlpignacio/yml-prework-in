@@ -1,0 +1,577 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "style": "emphasis",
+      "bleed": true,
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\ud83d\udcca",
+                  "size": "Large"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Daily RFI Status Report",
+                  "weight": "Bolder",
+                  "size": "Large",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "Sunday, 02 February 2026 - 8:00 AM AEST",
+                  "spacing": "None",
+                  "isSubtle": true,
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "style": "attention",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "\u26a0\ufe0f ATTENTION REQUIRED",
+          "weight": "Bolder",
+          "size": "Medium",
+          "color": "Attention"
+        },
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "\ud83d\udd34 At Risk (>21 days)",
+              "value": "5"
+            },
+            {
+              "title": "\ud83d\udfe1 Approaching Deadline (7 days)",
+              "value": "12"
+            },
+            {
+              "title": "\ud83d\udce7 Email Bounces",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "\ud83d\udccb JOB STATUS SUMMARY",
+          "weight": "Bolder",
+          "size": "Medium"
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Status",
+                  "weight": "Bolder",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Count",
+                  "weight": "Bolder",
+                  "size": "Small",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Change",
+                  "weight": "Bolder",
+                  "size": "Small",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\ud83d\udce5 Pre Work In (EL)",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "245",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "-5",
+                  "size": "Small",
+                  "horizontalAlignment": "Right",
+                  "color": "Attention"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\ud83d\udce5 Pre Work In (Non-EL)",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "120",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "+2",
+                  "size": "Small",
+                  "horizontalAlignment": "Right",
+                  "color": "Good"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\ud83d\udce4 Requested",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "89",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "+4",
+                  "size": "Small",
+                  "horizontalAlignment": "Right",
+                  "color": "Good"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\ud83d\udcdd Work In",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "156",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "+4",
+                  "size": "Small",
+                  "horizontalAlignment": "Right",
+                  "color": "Good"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\u23f3 Wait on Info",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "34",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "-2",
+                  "size": "Small",
+                  "horizontalAlignment": "Right",
+                  "color": "Attention"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\u270d\ufe0f Wait on Sign",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "28",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "+3",
+                  "size": "Small",
+                  "horizontalAlignment": "Right",
+                  "color": "Good"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\ud83d\udce6 Ready to Lodge",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "45",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "+3",
+                  "size": "Small",
+                  "horizontalAlignment": "Right",
+                  "color": "Good"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\u2705 Lodged",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "312",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "+7",
+                  "size": "Small",
+                  "horizontalAlignment": "Right",
+                  "color": "Good"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\ud83c\udfc6 Complete",
+                  "size": "Small"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "1250",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Right"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "60px",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "+10",
+                  "size": "Small",
+                  "horizontalAlignment": "Right",
+                  "color": "Good"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "\ud83d\udd14 REMINDERS SCHEDULED TODAY",
+          "weight": "Bolder",
+          "size": "Medium"
+        },
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "\ud83d\udce7 T+7 Email Reminders",
+              "value": "8"
+            },
+            {
+              "title": "\ud83d\udcf1 T+14 SMS Reminders",
+              "value": "3"
+            },
+            {
+              "title": "\ud83d\udea8 T+21 Final Notices",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Total Jobs: 2,279",
+          "size": "Small",
+          "isSubtle": true,
+          "horizontalAlignment": "Center"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Execute",
+      "title": "\ud83d\udcdd View Pre Work In Jobs",
+      "style": "positive",
+      "data": {
+        "action": "view_preworkin_jobs"
+      }
+    },
+    {
+      "type": "Action.Execute",
+      "title": "\u26a0\ufe0f View At-Risk Clients",
+      "data": {
+        "action": "view_at_risk_clients"
+      }
+    }
+  ]
+}

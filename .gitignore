@@ -1,0 +1,78 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.slnlaunch.user
+
+# VS Code
+.vscode/
+
+# NuGet
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+
+# Secrets and sensitive configuration
+**/appsettings.json
+**/appsettings.*.json
+!**/appsettings.Example.json
+*.env
+*.env.*
+!*.env.example
+**/secrets.json
+**/usersecrets/
+
+# Azure
+publish/
+*.pubxml
+*.publishproj
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Teams Toolkit
+env/.env.*.user
+env/.env.local
+.deployment/
+.fx/
+appPackage/build/
+
+# Misc
+*.log
+*.tmp
+*.temp
+*.cache
+
+# Claude settings (may contain local preferences)
+.claude/settings.local.json

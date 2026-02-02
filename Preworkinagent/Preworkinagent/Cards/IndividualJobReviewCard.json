@@ -1,0 +1,296 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "style": "emphasis",
+      "bleed": true,
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "https://adaptivecards.io/content/pending.png",
+                  "size": "Small",
+                  "style": "Person"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Review: ${contactName}",
+                  "weight": "Bolder",
+                  "size": "Large",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${contactEmail}",
+                  "spacing": "None",
+                  "isSubtle": true,
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${jobCount} job(s)",
+              "weight": "Bolder"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Earliest due: ${earliestDueDate}",
+              "horizontalAlignment": "Right",
+              "color": "${dueDateColor}"
+            }
+          ]
+        }
+      ],
+      "spacing": "Medium"
+    },
+    {
+      "type": "Container",
+      "style": "default",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${clientGroupName} (${groupReference})",
+          "weight": "Bolder",
+          "size": "Medium",
+          "spacing": "Medium"
+        },
+        {
+          "type": "Container",
+          "style": "emphasis",
+          "items": [
+            {
+              "type": "FactSet",
+              "facts": [
+                {
+                  "title": "${billingClientLabel}",
+                  "value": "Due: ${billingClientDueDate}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Container",
+          "$when": "${relatedClientsCount > 0}",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Related Entities:",
+              "weight": "Bolder",
+              "size": "Small",
+              "spacing": "Small"
+            },
+            {
+              "type": "FactSet",
+              "$data": "${relatedClients}",
+              "facts": [
+                {
+                  "title": "${name}",
+                  "value": "Due: ${dueDate}"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "spacing": "Medium"
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Prior Year History",
+          "weight": "Bolder",
+          "size": "Small"
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Work started:",
+                  "size": "Small",
+                  "isSubtle": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${priorYearStartDate}",
+                  "spacing": "None"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Invoiced:",
+                  "size": "Small",
+                  "isSubtle": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${priorYearInvoiceDate}",
+                  "spacing": "None"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "CC Contact:",
+              "value": "${ccContactDisplay}"
+            },
+            {
+              "title": "Partner:",
+              "value": "${partnerName}"
+            },
+            {
+              "title": "Mobile:",
+              "value": "${contactMobile}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "$when": "${isBookkeepingClient}",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Bookkeeping Client",
+          "color": "Accent",
+          "weight": "Bolder",
+          "size": "Small"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Add note to email (optional):",
+          "size": "Small",
+          "weight": "Bolder"
+        },
+        {
+          "type": "Input.Text",
+          "id": "partnerNotes",
+          "placeholder": "Enter any notes for the client email...",
+          "isMultiline": true,
+          "maxLength": 500
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Reviewing ${currentIndex} of ${totalContacts}",
+          "size": "Small",
+          "isSubtle": true,
+          "horizontalAlignment": "Center"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Send RFI",
+      "style": "positive",
+      "data": {
+        "action": "send_rfi",
+        "jobId": "${jobId}",
+        "clientGroupUUID": "${clientGroupUUID}",
+        "contactEmail": "${contactEmail}",
+        "currentIndex": "${currentIndex}",
+        "totalContacts": "${totalContacts}",
+        "allJobIds": "${allJobIds}"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Skip",
+      "data": {
+        "action": "skip",
+        "jobId": "${jobId}",
+        "currentIndex": "${currentIndex}",
+        "totalContacts": "${totalContacts}",
+        "allJobIds": "${allJobIds}"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Do Not Send",
+      "style": "destructive",
+      "data": {
+        "action": "do_not_send",
+        "jobId": "${jobId}",
+        "clientGroupUUID": "${clientGroupUUID}",
+        "contactEmail": "${contactEmail}",
+        "currentIndex": "${currentIndex}",
+        "totalContacts": "${totalContacts}",
+        "allJobIds": "${allJobIds}"
+      }
+    }
+  ]
+}

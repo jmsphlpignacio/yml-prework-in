@@ -1,0 +1,350 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "style": "emphasis",
+      "bleed": true,
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "\ud83d\udcdd",
+                  "size": "Large"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Review: John Smith",
+                  "weight": "Bolder",
+                  "size": "Large",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "john.smith@example.com",
+                  "spacing": "None",
+                  "isSubtle": true,
+                  "wrap": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "spacing": "Medium",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "3 job(s)",
+              "weight": "Bolder"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Earliest due: 28 Feb 2026",
+              "horizontalAlignment": "Right",
+              "color": "Warning"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "style": "default",
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "\ud83d\udcc1 Smith Family Trust (SMIT0001)",
+          "weight": "Bolder",
+          "size": "Medium",
+          "spacing": "Medium"
+        },
+        {
+          "type": "Container",
+          "style": "emphasis",
+          "items": [
+            {
+              "type": "ColumnSet",
+              "columns": [
+                {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "\u2605 Smith Family Trust",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "width": "auto",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Due: 28 Feb 2026",
+                      "isSubtle": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "text": "Related Entities:",
+          "weight": "Bolder",
+          "size": "Small",
+          "spacing": "Small"
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "   Smith Holdings Pty Ltd",
+                  "isSubtle": true
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Due: 28 Feb 2026",
+                  "isSubtle": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "   John Smith (Individual)",
+                  "isSubtle": true
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Due: 15 Mar 2026",
+                  "isSubtle": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "\ud83d\udccc Prior Year History",
+          "weight": "Bolder",
+          "size": "Small"
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Work started:",
+                  "size": "Small",
+                  "isSubtle": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "15 Mar 2025",
+                  "spacing": "None"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Invoiced:",
+                  "size": "Small",
+                  "isSubtle": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "28 Apr 2025",
+                  "spacing": "None"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "\ud83d\udc65 CC Contact:",
+              "value": "Jane Smith (jane.smith@example.com)"
+            },
+            {
+              "title": "\ud83d\udc54 Partner:",
+              "value": "Michael Johnson"
+            },
+            {
+              "title": "\ud83d\udcde Mobile:",
+              "value": "0412 345 678"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "\ud83d\udcd2 Bookkeeping Client",
+          "color": "Accent",
+          "weight": "Bolder",
+          "size": "Small"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "\ud83d\udcdd Add note to email (optional):",
+          "size": "Small",
+          "weight": "Bolder"
+        },
+        {
+          "type": "Input.Text",
+          "id": "partnerNotes",
+          "placeholder": "Enter any notes for the client email...",
+          "isMultiline": true,
+          "maxLength": 500
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "spacing": "Medium",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Reviewing 1 of 5",
+          "size": "Small",
+          "isSubtle": true,
+          "horizontalAlignment": "Center"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "\u2705 Send RFI",
+      "style": "positive",
+      "data": {
+        "action": "send_rfi",
+        "jobId": "J028001",
+        "clientGroupUUID": "12345-abcde-67890",
+        "contactEmail": "john.smith@example.com",
+        "currentIndex": 1,
+        "totalContacts": 5,
+        "allJobIds": "J028001,J028002,J028003,J028004,J028005"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "\u23ed\ufe0f Skip",
+      "data": {
+        "action": "skip",
+        "jobId": "J028001",
+        "currentIndex": 1,
+        "totalContacts": 5,
+        "allJobIds": "J028001,J028002,J028003,J028004,J028005"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "\ud83d\udeab Do Not Send",
+      "style": "destructive",
+      "data": {
+        "action": "do_not_send",
+        "jobId": "J028001",
+        "clientGroupUUID": "12345-abcde-67890",
+        "contactEmail": "john.smith@example.com",
+        "currentIndex": 1,
+        "totalContacts": 5,
+        "allJobIds": "J028001,J028002,J028003,J028004,J028005"
+      }
+    }
+  ]
+}
