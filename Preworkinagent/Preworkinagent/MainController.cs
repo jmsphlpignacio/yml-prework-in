@@ -1,3 +1,5 @@
+using Microsoft.Teams.AI;
+using Microsoft.Teams.AI.Messages;
 using Microsoft.Teams.AI.Models.OpenAI;
 using Microsoft.Teams.AI.Prompts;
 using Microsoft.Teams.AI.Templates;
@@ -56,6 +58,18 @@ public class MainController
     private async Task HandleQuery(OpenAIChatModel model, MessageActivity activity, IContext.Client client, IContext<MessageActivity> context)
     {
         var userText = activity.Text?.ToLowerInvariant() ?? "";
+        var conversationId = context.Activity.Conversation.Id;
+
+        // Get or create conversation memory
+        var messages = ConversationMemory.GetOrCreate(conversationId);
+
+        // Check for clear/reset commands
+        if (userText == "clear" || userText == "reset" || userText == "start over" || userText == "new conversation")
+        {
+            ConversationMemory.Clear(conversationId);
+            await client.Send("Conversation history cleared. How can I help you?");
+            return;
+        }
 
         // Check if user is asking for daily status report card
         if (userText.Contains("daily status card") ||
@@ -257,7 +271,13 @@ IMPORTANT: You must CALL the appropriate function and return its results. Never 
             _rfiStatusFunctions.GetAtRiskClients
         );
 
-        var result = await prompt.Send(activity.Text ?? string.Empty);
+        // Send with conversation history for context
+        var options = new IChatPrompt<OpenAI.Chat.ChatCompletionOptions>.RequestOptions
+        {
+            Messages = messages
+        };
+
+        var result = await prompt.Send(activity.Text ?? string.Empty, options);
         if (result.Content != null)
         {
             var message = new MessageActivity
@@ -265,6 +285,10 @@ IMPORTANT: You must CALL the appropriate function and return its results. Never 
                 Text = result.Content,
             }.AddAIGenerated();
             await context.Send(message);
+
+            // Update conversation history
+            messages.Add(UserMessage.Text(activity.Text ?? string.Empty));
+            messages.Add(new ModelMessage<string>(result.Content));
         }
         else
         {
